@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/InformationSystemOfCompositeDisaster.iml" filepath="$PROJECT_DIR$/.idea/InformationSystemOfCompositeDisaster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InformationSystemOfCompositeDisaster.iml" filepath="$PROJECT_DIR$/InformationSystemOfCompositeDisaster.iml" />
       <module fileurl="file://C:\Users\Tsung\AndroidStudioProjects\InformationSystemOfCompositeDisaster\InformationSystemOfCompositeDisaster.iml" filepath="C:\Users\Tsung\AndroidStudioProjects\InformationSystemOfCompositeDisaster\InformationSystemOfCompositeDisaster.iml" />
+      <module fileurl="file://C:\Users\Student\AndroidStudioProjects\InformationSystemOfCompositeDisaster\.idea\InformationSystemOfCompositeDisaster.iml" filepath="C:\Users\Student\AndroidStudioProjects\InformationSystemOfCompositeDisaster\.idea\InformationSystemOfCompositeDisaster.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
