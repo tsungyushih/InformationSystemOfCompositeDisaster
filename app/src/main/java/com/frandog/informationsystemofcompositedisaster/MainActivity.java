@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String[] str = new String[]{"地震資訊","颱風資訊","PM2.5、紫外線","停班停課資訊","停水停電資訊"};
+        String[] str = new String[]{"地震資訊","颱風資訊","PM2.5與紫外線","停班停課資訊","停水停電資訊"};
         ListView lv = findViewById(R.id.listview);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 MainActivity.this,
