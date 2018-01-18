@@ -4,18 +4,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-
+import android.widget.TextView;
 import java.util.ArrayList;
 
 public class Main2Activity extends AppCompatActivity {
     Spinner s;
+    TextView tv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
         setTitle("地震資訊");
-        s=findViewById(R.id.spinner);
+        s = findViewById(R.id.spinner);
 
         ArrayList<String> arraylist = new ArrayList<>();
         arraylist.add("顯著有感地震");
@@ -28,5 +30,11 @@ public class Main2Activity extends AppCompatActivity {
                 arraylist);
 
         s.setAdapter(adapter);
+        tv = findViewById(R.id.textView);
+
+
     }
-}
+ }
+
+
+
