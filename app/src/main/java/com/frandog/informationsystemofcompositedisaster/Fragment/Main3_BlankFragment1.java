@@ -2,23 +2,32 @@ package com.frandog.informationsystemofcompositedisaster.Fragment;
 
 import android.content.Context;
 import android.net.Uri;
+import android.net.http.SslError;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.SslErrorHandler;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.frandog.informationsystemofcompositedisaster.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link BlankFragment.OnFragmentInteractionListener} interface
+ * {@link Main3_BlankFragment1.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link BlankFragment#newInstance} factory method to
+ * Use the {@link Main3_BlankFragment1#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BlankFragment extends Fragment {
+public class Main3_BlankFragment1 extends Fragment {
+    WebView wv;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,7 +39,7 @@ public class BlankFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public BlankFragment() {
+    public Main3_BlankFragment1() {
         // Required empty public constructor
     }
 
@@ -40,11 +49,11 @@ public class BlankFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment BlankFragment.
+     * @return A new instance of fragment Main3_BlankFragment1.
      */
     // TODO: Rename and change types and number of parameters
-    public static BlankFragment newInstance(String param1, String param2) {
-        BlankFragment fragment = new BlankFragment();
+    public static Main3_BlankFragment1 newInstance(String param1, String param2) {
+        Main3_BlankFragment1 fragment = new Main3_BlankFragment1();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,7 +74,8 @@ public class BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+        return inflater.inflate(R.layout.fragment_main3__blank_fragment1, container, false);
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -106,4 +116,22 @@ public class BlankFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+//    取得Fragment的介面元件,並設定給對應的介面元件,其實就相等Activity的onCreate()
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        //findViewByID時,必須先呼叫getView()取得Fragment的View物件才能呼叫findViewByID
+        wv=getView().findViewById(R.id.webview3_1);
+        wv.setWebViewClient(new WebViewClient() {
+            @Override
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+                handler.proceed();
+            }
+        });
+        wv.getSettings().setJavaScriptEnabled(true);
+        wv.loadUrl("http://www.cwb.gov.tw/m/w/W21.htm");
+    }
+
 }

@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import com.frandog.informationsystemofcompositedisaster.Fragment.BlankFragment;
+import com.frandog.informationsystemofcompositedisaster.Fragment.Main3_BlankFragment3;
 
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -59,7 +59,7 @@ public class Main4Activity extends AppCompatActivity {
                 {
                     case 1:
                         FragmentTransaction ft = getFragmentManager().beginTransaction();
-                        ft.replace(R.id.layout2,new BlankFragment());
+                        ft.replace(R.id.layout2,new Main3_BlankFragment3());
                         ft.commit();
 
                     //抓網站資料

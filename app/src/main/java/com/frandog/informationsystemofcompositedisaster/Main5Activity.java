@@ -33,6 +33,5 @@ public class Main5Activity extends AppCompatActivity {
         wv.loadUrl("https://www.dgpa.gov.tw/typh/daily/nds.html?uid=31");
 
 
-
     }
 }
